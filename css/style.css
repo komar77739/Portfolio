@@ -1,0 +1,449 @@
+/*
+    1-Common Style
+    2-General Style
+    3-Sections
+        3.0 Header Section
+        3.1 Home Section 
+        3.2 ABOUT Section 
+        3.3 Portfolio Section 
+        3.4 SERVICE Section 
+        3.5 Prices Section 
+        3.6 Team Section 
+        3.7 Blog Section 
+        3.8 Contact Section 
+        3.9 Footer Section 
+*/
+/*  1-Common 
+    -container
+    -overlay
+    -opacity hover
+    -section header
+    -section padding
+    -hover effect 1 (left to right)
+    -hover effect 2 (up to down)
+    
+*/
+
+/*  2-General Css Style*/
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Verala Round',sans-serif;
+}
+
+.clear{
+    clear:both;
+}
+
+.container{
+    width:80%;
+    margin:auto;
+}
+
+.pd-y{
+    padding:50px
+}
+
+.overlay{
+    position: absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    background-color: rgba(0,0,0,0.8);
+}
+
+.ltreffect{
+    position: relative;
+}
+
+.ltreffect::after{
+    position: absolute;
+    content:"";
+    width: 0%;
+    height: 100%;
+    background-color: #333;
+    top:0;
+    left:0;
+    z-index:-1;
+    transition: width .7s;
+    -webkit-transition: width .7s;
+    -moz-transition: width .7s;
+    -ms-transition: width .7s;
+    -o-transition: width .7s;
+}
+
+.ltreffect:hover::after{
+    width: 100%;
+}
+
+h1 , h2 , h3 , h4 , h5 , h6{
+    font-family: montserrat,sans-serif
+}
+
+button{
+    font-family:inherit;
+}
+
+a{
+    text-decoration: none;
+}
+
+.hover-opacity{
+    transition:opacity .5s;
+    -webkit-transition:opacity .5s;
+    -moz-transition:opacity .5s;
+    -ms-transition:opacity .5s;
+    -o-transition:opacity .5s;
+}
+
+.hover-opacity:hover{
+    opacity: 0.7;
+}
+
+.section-header{
+    text-align:center;
+    margin:40px 0px;
+}
+
+.section-header .section-title{
+    font-size:35px;
+    text-transform: capitalize;
+    margin-bottom: 15px;
+}
+
+.section-header .line{
+    display:block;
+    width:40px;
+    height:5px;
+    margin:auto;
+    background-color:#6195ff;
+
+}
+/*  3-Section Style
+    /*  3.0- Header Section*/
+.header{
+    position: fixed;
+    width: 100%;
+    z-index:2;
+    background-color: rgba(0, 0, 0, 0.384);
+}
+
+.header .nav{
+    width:60%;
+    float:left;
+    list-style: none;
+    text-align: right;
+}
+
+.header .logo{
+    width:40%;
+    float:left;
+}
+
+.header .logo img{
+   width:20%;
+   margin-top:15px; 
+}
+
+.header .nav > li{
+    display: inline-block;
+    text-align:center;
+}
+
+.header .nav > li > a{
+    color:#fff;
+    font-size: 15px;
+    padding:30px 15px;
+    display:block;
+}
+
+.header .nav > li > a:after,
+.header .nav > li > a.active:after{
+    content: "";
+    display:block;
+    height:2px;
+    margin-top:2px;
+    background-color:#6195ff;
+    transition:width .5s;
+    -webkit-transition:width .5s;
+    -moz-transition:width .5s;
+    -ms-transition:width .5s;
+    -o-transition:width .5s;
+}
+
+.header .nav > li > a.active:after{
+    width:100%;
+}
+
+.header .nav > li > a:after{
+    width:0%;
+}
+
+.header .nav > li > a:hover:after{
+    width:100%;
+}
+
+.dropdown{
+    position: relative;
+}
+
+.dropdown-menu{
+    position: absolute;
+    background:#6195ff;
+    width:150px;
+    text-align: center;
+    left:-50%;
+    top:80%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s,visibility .5s;
+    -webkit-transition: opacity .5s,visibility .5s;
+    -moz-transition: opacity .5s,visibility .5s;
+    -ms-transition: opacity .5s,visibility .5s;
+    -o-transition: opacity .5s,visibility .5s;
+}
+
+.dropdown-menu a{
+    color:#FFF;
+    display:block;
+    padding:10px;
+}
+
+.dropdown:hover .dropdown-menu{
+    opacity: 1;
+    visibility: visible;
+}
+
+    /* 3.1 Home Section */
+.home{
+    height:100vh;
+    width:100%;
+    background-image:url(../images/background/background1.webp);
+    background-size: cover;
+    position: relative;
+}
+.home-content{
+    position: absolute;
+    width:65%;
+    top: 50%;
+    left:50%;
+    text-align: center;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+}
+.home .title{
+    color:#FFF;
+    font-size:3.5rem;
+    text-transform: uppercase;
+}
+.home-desc{
+    margin:20px 0;
+    color:#FFF;
+    letter-spacing: 2px;
+    line-height: 1.5;
+}
+.home .btn{
+    min-width:160px;
+    padding:15px 0;
+    border:0;
+    cursor:pointer;
+    font-size:18px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+.btn-learn{
+    margin-left: 10px;
+    background-color: cornflowerblue;
+    color:#FFF
+}
+.btn-start{
+    background-color: #FFF;
+
+}
+
+/* 3.2 ABOUT Section */
+
+.about-content{
+    overflow:hidden
+}
+
+.about-item{
+    width:30%;
+    float:left;
+    text-align: center;
+    border:1px solid #e8e8e8;
+    padding:70px 20px;
+
+}
+
+.about-item.mg{
+    margin:0 5%;
+}
+
+.about-item .icon{
+    color:#6195ff;
+    margin-bottom: 20px;
+}
+
+.about-item-title{
+    text-transform: capitalize;
+    margin-bottom: 20px;
+    transition: color .5;
+    -webkit-transition: color .5;
+    -moz-transition: color .5;
+    -ms-transition: color .5;
+    -o-transition: color .5;
+}
+
+.about-item-desc{
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color:#899999
+}
+
+.about-item-link{
+    color:#6195ff;
+    text-transform: capitalize;
+
+}
+.about-item:hover .about-item-title{
+    color:#FFF
+}
+
+
+/* 3.3 Portfolio Section */
+.Portfolio{
+    background-color: #e2e2e2;
+}
+
+.Portfolio-content{
+    overflow:hidden
+}
+
+.Portfolio-item{
+    width:32%;
+    float:left;
+    margin-bottom: 60px;
+    position: relative;
+    padding:20px;
+}
+
+.Portfolio-item.mg{
+    margin:0 2%
+}
+
+.Portfolio-item img{
+    width:100%;
+}
+
+.Portfolio-item .layer-content{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .7s;
+    -webkit-transition: opacity .7s;
+    -moz-transition: opacity .7s;
+    -ms-transition: opacity .7s;
+    -o-transition: opacity .7s;
+}
+
+.Portfolio-item:hover .layer-content{
+    opacity: 1;
+    visibility:visible
+}
+
+.layer-info{
+    position: absolute;
+    left:50%;
+    top:50%;
+    width:80%;
+    text-align: center;
+    transform:translate(-50%,-50%);
+    -webkit-transform:translate(-50%,-50%);
+    -moz-transform:translate(-50%,-50%);
+    -ms-transform:translate(-50%,-50%);
+    -o-transform:translate(-50%,-50%);
+}
+
+.layer-content-title{
+    font: size 20px;
+    color:#FFF;
+    margin-bottom:10px;
+    position:relative;
+    top:10px;
+    opacity: 0;
+    visibility: hidden;
+    transition: top 0.5s ;
+    transition-delay:0.3s;
+    -webkit-transition: top 0.5s,opacity 0.5s ;
+    -moz-transition: top 0.5s ;
+    -ms-transition: top 0.5s ;
+    -o-transition: top 0.5s ;
+}
+
+
+.layer-content .category{
+    color: #6195ff;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 10px;
+    position:relative;
+    top:10px;
+    opacity: 0;
+    visibility: hidden;
+    transition: top 0.5s;
+    transition-delay:0.3s;
+    -webkit-transition: top 0.5s,opacity 0.5s;
+    -moz-transition: top 0.5s;
+    -ms-transition: top 0.5s;
+    -o-transition: top 0.5s;
+}
+ 
+.layer-content a i{
+    line-height:40px ;
+    display: inline-block;
+    width: 40px;
+    height:40px;
+    color:#FFF;
+    background-color: #6195ff;
+    position:relative;
+    top:10px;
+    opacity: 0;
+    visibility: hidden;
+    transition: top 0.5s,opacity 0.5s;
+    transition-delay:0.3s;
+    -webkit-transition: top 0.5s,opacity 0.5s;
+    -moz-transition: top 0.5s,opacity 0.5s;
+    -ms-transition: top 0.5s,opacity 0.5s;
+    -o-transition: top 0.5s,opacity 0.5s;
+}
+
+.Portfolio-item:hover .layer-content-title,
+.Portfolio-item:hover .layer-content .category,
+.Portfolio-item:hover .layer-content i{
+    top:0;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* 3.4 SERVICE Section */
+/* 3.5 Prices Section */
+/* 3.6 Team Section */
+/* 3.7 Blog Section */
+/* 3.8 Contact Section */
